@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Elegant Nails & Spa Freelance Website",
+    "stack": "React.js | Node.js",
+    "description": "The Elegant Nails & Spa website displays a modern web application used to display store information, service menu, and handle online booking. ",
+    "thumbnail": "src/assets/thumbnails/elegantnails_thumbnail.png",
+    "url": "https://659b38474cfc79e49e7e8a12--elegant-nails.netlify.app/"
+  },
+  {
+    "title": "AKsupplied E-commerce Website",
+    "stack": "React.js | Node.js | PostgreSQL",
+    "description": "The AKsupplied website is an ecommerce platform dedicated to providing. Built with a tech stack that combines the power of React.js for a dynamic user interface, Node.js for a robust backend, and PostgreSQL for secure data management, this project is a testament to the fusion of innovation and style.",
+    "thumbnail": "src/assets/thumbnails/aksupplied_thumbnail.png",
+    "url": ""
+  },
+  {
+    "title": "CRUD Feedback App",
+    "stack": "React.js | Node.js | MongoDB",
+    "description": "This feedback app was designed for users to communicate with each other ",
+    "thumbnail": "src/assets/thumbnails/crud_thumbnail.png",
+    "url": "http://feedback-kd.michelphangelo.net.s3-website.us-east-2.amazonaws.com/"
+  }
+]
