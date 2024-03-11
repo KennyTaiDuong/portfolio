@@ -12,7 +12,8 @@ const StyledNavLink = styled(NavLink)`
 `
 
 const Thumbnail = styled.img`
-  width: 20rem;
+  width: 100%;
+  max-width: 25rem;
 `
 
 const TextContent = styled.div`

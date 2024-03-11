@@ -95,7 +95,7 @@ const TechLogo = styled.img`
 
 const AboutMe = () => {
   return (
-    <Container>
+    <Container id="home">
       <AboutContainer>
         <Content>
           <Title>Web Developer</Title>
