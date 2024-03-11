@@ -5,6 +5,7 @@ import AboutMe from "../components/AboutMe"
 import PortfolioCard from "../components/PortfolioCard"
 import Footer from "../components/Footer"
 import projects from "../../data.json"
+import { ChangeEvent, useState } from "react"
 
 const Container = styled.div`
   display: flex;
@@ -35,28 +36,62 @@ const ContainerLabel = styled.p`
   color: rgb(51, 51, 51); 
 `
 
+const PasswordScreen = styled.div`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: white;
+`
+
+const PasswordInput = styled.input`
+
+`
+
 const Home = () => {
 
-  const Portfolio = projects.map((project) => {
+  const [password, setPassword] = useState("")
+  const [isPasswordCorrect, setIsPasswordCorrect] = useState(false)
+
+  const Portfolio = projects.map((project, index) => {
     const { thumbnail, title, stack, description, url } = project
 
     return (
-      <PortfolioCard thumbnail={thumbnail} title={title} tech={stack} desc={description} url={url} />
+      <PortfolioCard key={index} thumbnail={thumbnail} title={title} tech={stack} desc={description} url={url} />
     )
   })
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+  
+  const handleButton = (e: any) => {
+    e.preventDefault()
+    if (password === "Folsom") {
+      setIsPasswordCorrect(true)
+    }
+  }
+
   return (
-    <Container>
-      <Header/>
-      <Content>
-        <AboutMe />
-      </Content>
-      <PortfolioContainer id="projects">
-        <ContainerLabel>Recent Work</ContainerLabel>
-        {Portfolio}
-      </PortfolioContainer>
-      <Footer/>
-    </Container>
+    <>
+      <PasswordScreen style={{ display: `${isPasswordCorrect ? "none" : "block"}`}}>
+        Password: <PasswordInput type="text" onChange={(e) => handleChange(e)} value={password}/>
+        <PasswordInput type="button" value={"Enter"} onClick={(e) => handleButton(e)}/>
+      </PasswordScreen>
+      <Container>
+        <Header/>
+        <Content>
+          <AboutMe />
+        </Content>
+        <PortfolioContainer id="projects">
+          <ContainerLabel>Recent Work</ContainerLabel>
+          {Portfolio}
+        </PortfolioContainer>
+        <Footer/>
+      </Container>
+    </>
   )
 }
 
